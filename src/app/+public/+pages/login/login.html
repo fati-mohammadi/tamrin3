@@ -1,4 +1,3 @@
-
 <div id="login" class="login">
     <h1>به کتابخانه الکترونیک خوش آمدید</h1>
     <form (ngSubmit)="check()">
@@ -8,7 +7,8 @@
         </div>
         <div>
             <label for="password"> رمزعبور</label>
-            <input [(ngModel)]="loginform.password" type="password" placeholder="رمزعبور " id="password" name="password">
+            <input [(ngModel)]="loginform.password" type="password" placeholder="رمزعبور " id="password"
+                name="password">
         </div>
         <div>
             <input [(ngModel)]="loginform.keepme" id="keepme" name="keepme" type="checkbox">
@@ -18,9 +18,9 @@
             <button [disabled]="loginform.username==''||loginform.password==''" type="submit">ورود</button>
         </div>
         @if (message!=='') {
-            <div>
-                {{message}}
-            </div>
+        <div>
+            {{message}}
+        </div>
         }
     </form>
 </div>

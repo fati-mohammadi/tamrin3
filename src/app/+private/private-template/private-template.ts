@@ -1,18 +1,18 @@
 import { Component, inject } from '@angular/core';
-import { RouterOutlet, RouterLinkWithHref, RouterLink, Router } from '@angular/router';  // فقط RouterOutlet را وارد می‌کنید
+import { RouterOutlet, RouterLinkWithHref, RouterLink, Router } from '@angular/router';
 
 @Component({
   selector: 'app-private-template',
-  standalone: true,  // تنظیم standalone برای این کامپوننت
-  imports: [RouterOutlet,RouterLink],  // RouterOutlet را به طور مستقیم وارد می‌کنید
+  standalone: true,
+  imports: [RouterOutlet, RouterLink],
   templateUrl: './private-template.html',
   styleUrls: ['./private-template.css']
 })
 export class PrivateTemplate {
-  router=inject(Router);
-logoff() {
-sessionStorage.clear();
-localStorage.removeItem('token');
-this.router.navigateByUrl('/login');
-}
+  router = inject(Router);
+  logoff() {
+    sessionStorage.clear();
+    localStorage.removeItem('token');
+    this.router.navigateByUrl('/login');
+  }
 }

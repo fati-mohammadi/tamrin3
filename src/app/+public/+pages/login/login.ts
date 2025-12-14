@@ -9,28 +9,28 @@ import { Router } from '@angular/router';
   styleUrl: './login.css',
 })
 export class Login {
-  router=inject(Router);
-  message:string='';
-loginform:loginform={
-  username:'',
-  password:'',
-  keepme:false,
-};
-check(){
-  if(this.loginform.username=='admin' && this.loginform.password=='admin'){
-   sessionStorage.setItem('token','ftydrfghjkky');
-   if(this.loginform.keepme==true){
-    localStorage.setItem('token','ftydrfghjkky');
-   }
-   this.router.navigateByUrl('private')
+  router = inject(Router);
+  message: string = '';
+  loginform: loginform = {
+    username: '',
+    password: '',
+    keepme: false,
+  };
+  check() {
+    if (this.loginform.username == 'admin' && this.loginform.password == 'admin') {
+      sessionStorage.setItem('token', 'ftydrfghjkky');
+      if (this.loginform.keepme == true) {
+        localStorage.setItem('token', 'ftydrfghjkky');
+      }
+      this.router.navigateByUrl('private')
+    }
+    else {
+      this.message = 'نام کاربری یا کلمه عبور صحیح نیست'
+    }
   }
-  else{
-this.message='نام کاربری یا کلمه عبور صحیح نیست'
-}
-}
 }
 interface loginform {
-username:string;
-password:string;
-keepme:boolean;
+  username: string;
+  password: string;
+  keepme: boolean;
 }

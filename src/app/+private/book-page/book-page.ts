@@ -11,52 +11,52 @@ import { FormsModule } from '@angular/forms';
 export class BookPage implements OnInit {
 
 
-save() {
-  const newItem=Object.assign({},this.item);
-  this.booksService.add(this.item);
-  this.dataRefrsh();
-  this.state='list';
+  save() {
+    const newItem = Object.assign({}, this.item);
+    this.booksService.add(this.item);
+    this.dataRefrsh();
+    this.state = 'list';
 
-}
+  }
   ngOnInit(): void {
     this.dataRefrsh();
   }
-data:BookItem[]=[];
-item:BookItem={
-  id:0,
-  title:'',
-  writer:'',
-  publisher:'',
-  price:0,
-  img:'',
-}
- booksService=inject(BooksService);
- state:string='list';
- dataRefrsh(){
-this.data=this.booksService.list();
-  }
-  add() {
- this.state='add';
-  this.item = {
+  data: BookItem[] = [];
+  item: BookItem = {
     id: 0,
     title: '',
     writer: '',
     publisher: '',
     price: 0,
     img: '',
-  };
- 
+  }
+  booksService = inject(BooksService);
+  state: string = 'list';
+  dataRefrsh() {
+    this.data = this.booksService.list();
+  }
+  add() {
+    this.state = 'add';
+    this.item = {
+      id: 0,
+      title: '',
+      writer: '',
+      publisher: '',
+      price: 0,
+      img: '',
+    };
+
+  }
+  cansel() {
+    this.state = 'list';
+  }
 }
-cansel(){
-  this.state='list';
- }
-}
-export interface BookItem{
-  id:number;
-  title:string;
-  writer:string;
-  publisher:string;
-  price:number;
-  img:string;
+export interface BookItem {
+  id: number;
+  title: string;
+  writer: string;
+  publisher: string;
+  price: number;
+  img: string;
 
 }

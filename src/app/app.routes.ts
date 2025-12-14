@@ -9,16 +9,18 @@ import { Dashboard } from './+private/dashboard/dashboard';
 import { privatrGuard } from './+shared/private-guard';
 
 export const routes: Routes = [
-    {path:'login',component:Login},
-    {path:'private',canActivate:[privatrGuard],component:PrivateTemplate,children:[
-        {path:'books',component:BookPage},
-        {path:'members',component:MembersPage},
-        {path:'borrows',component:BorrowsPage},
-        {path:'reports',component:ReportsPage},
-        {path:'dashboard',component:Dashboard},
-        {path:'',redirectTo:'dashboard',pathMatch:'prefix'},
-        {path:'**',redirectTo:'dashboard'},
-    ]},
-    {path:'',redirectTo:'login',pathMatch:'full'},
-    {path:'**',redirectTo:'login'},
+    { path: 'login', component: Login },
+    {
+        path: 'private', canActivate: [privatrGuard], component: PrivateTemplate, children: [
+            { path: 'books', component: BookPage },
+            { path: 'members', component: MembersPage },
+            { path: 'borrows', component: BorrowsPage },
+            { path: 'reports', component: ReportsPage },
+            { path: 'dashboard', component: Dashboard },
+            { path: '', redirectTo: 'dashboard', pathMatch: 'prefix' },
+            { path: '**', redirectTo: 'dashboard' },
+        ]
+    },
+    { path: '', redirectTo: 'login', pathMatch: 'full' },
+    { path: '**', redirectTo: 'login' },
 ];

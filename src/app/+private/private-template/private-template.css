@@ -1,24 +1,26 @@
-.sidebar{
+.sidebar {
     position: fixed;
-  top: 0;
+    top: 0;
     width: 200px;
     height: 1000px;
-   background-color: #178383;
-   
+    background-color: #178383;
 
 
-    a{
+
+    a {
         display: block;
-        color:rgb(253, 249, 249);
+        color: rgb(253, 249, 249);
         padding: 0.9em 0.8em;
-        text-decoration:  none;
+        text-decoration: none;
         cursor: pointer;
-        
-        
+
+
     }
 }
-.content{
-    
+
+.content {
+
     margin-right: 300px;
-    padding: 0.4em; ;
+    padding: 0.4em;
+    ;
 }

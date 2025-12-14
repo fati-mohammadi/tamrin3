@@ -1,0 +1,43 @@
+.primary {
+    background-color: #178383;
+    color: white;
+    padding: 0.4em 0.7em;
+    border-radius: 10px;
+    margin: 0.1em;
+    margin-top: 5px;
+
+}
+
+table {
+    margin-right: -50px;
+    width: 100%;
+    border-collapse: collapse;
+
+    th {
+        background-color: #178383;
+        color: white;
+        text-align: right;
+    }
+
+    th,
+    td {
+        padding: 0.2em;
+        ;
+    }
+
+    th {
+        border-top: 1px solid rgb(138, 137, 137);
+    }
+
+    tr {
+        border-bottom: 1px solid rgb(93, 92, 92);
+    }
+
+    tr:nth-of-type(2n+1) {
+        background-color: #aad1d1;
+    }
+}
+
+.img {
+    width: 50px;
+}
